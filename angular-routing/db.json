@@ -1,9 +1,69 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "Title",
+      "author": "typicode"
+    },
+    {
+      "title": "Learn service",
+      "author": "Nar",
+      "id": 3
+    },
+    {
+      "title": "Learn service",
+      "author": "Nar",
+      "id": 4
+    },
+    {
+      "title": "Learn service",
+      "author": "Nar",
+      "id": 5
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 6
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 7
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 8
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 9
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 10
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 11
+    },
+    {
+      "title": "Lesson is over service",
+      "author": "Nar",
+      "id": 12
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }

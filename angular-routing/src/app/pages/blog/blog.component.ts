@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
 import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BlogService } from '../../blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -17,21 +17,21 @@ export class BlogComponent implements OnInit {
   // changeTitle() {
   //   this.title = 'new title ' + this.counter++;
   // }
-  constructor(private http: HttpClient) {
+  constructor(private blogService: BlogService) {
   }
   // ngAfterViewInit(): void {
   //   throw new Error('Method not implemented.');
   // }
   ngOnInit() {
-    console.log('parent init');
-    this.http.get('http://localhost:3000/posts').subscribe((posts: any) => {
+    this.blogService.getPosts()
+      .subscribe((posts: any) => {
+        console.log(posts);
+        this.posts = posts;
+      })
+    this.blogService.getNewPost({ title: 'Lesson is over service', author: 'Nar' }).subscribe((posts: any) => {
       console.log(posts);
-      this.posts = posts;
+      this.posts.push(posts);
     })
-    // this.http.post('http://localhost:3000/posts', { title: 'newPost', author: 'Nar' }).subscribe((posts: any) => {
-    //   console.log(posts);
-    //   this.posts.push(posts);
-    // })
 
 
   }

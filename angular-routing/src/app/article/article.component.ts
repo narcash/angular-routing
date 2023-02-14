@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-article',
@@ -7,20 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent {
-  delete() {
-    this.http.delete('http://localhost:3000/posts/2',).subscribe(x => {
-      console.log(x);
-    })
-  }
 
   @Input() title = '';
   timer = 0;
   timerId: any = 0;
   ngOnChanges(): void {
-    console.log('ngOnChanges');
+    // console.log('ngOnChanges');
   }
   ngOnInit(): void {
-    console.log('OnInit');
+    this.postService.sayNamePost(this.title);
 
     // this.timerId = setInterval(() => {
     //   console.log(this.timer++);
@@ -32,7 +28,13 @@ export class ArticleComponent {
     console.log('destroy');
 
   }
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private postService: BlogService) {
 
+
+  }
+  delete() {
+    this.http.delete('http://localhost:3000/posts/2',).subscribe(x => {
+      console.log(x);
+    })
   }
 }
