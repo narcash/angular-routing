@@ -8,6 +8,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ArticleComponent } from './article/article.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ArticleComponent } from './article/article.component';
     BlogComponent,
     ContactsComponent,
     NotFoundComponent,
-    ArticleComponent
+    ArticleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
